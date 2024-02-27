@@ -38,6 +38,7 @@
 
 //pada kasus prevent default a akan merefresh website sehingga popup tidak dapat hilang
 //sehingga penggunaaan prevent default akan mencegah a merefresh halaman
+
 const close = document.querySelectorAll('.close');
 close.forEach(function (el) {
     el.addEventListener('click', function (e) {

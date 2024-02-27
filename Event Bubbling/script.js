@@ -38,20 +38,28 @@
 
 //pada kasus prevent default a akan merefresh website sehingga popup tidak dapat hilang
 //sehingga penggunaaan prevent default akan mencegah a merefresh halaman
-const close = document.querySelectorAll('.close');
-close.forEach(function (el) {
-    el.addEventListener('click', function (e) {
-        // close[i].parentElement.style.display = 'none';
+// const close = document.querySelectorAll('.close');
+// close.forEach(function (el) {
+//     el.addEventListener('click', function (e) {
+//         // close[i].parentElement.style.display = 'none';
+//         e.target.parentElement.style.display = 'none';
+//         e.preventDefault();
+//         //stop propagation berfungsi untuk membuat event parent tidak terpanggil pada saat memanggil event child
+//         e.stopPropagation();
+//     });
+// });
+
+// const cards = document.querySelectorAll('.card');
+// cards.forEach(function (card) {
+//     card.addEventListener('click', function (e) {
+//         alert('ok')
+//     });
+// });
+
+const container = document.querySelector('.container');
+container.addEventListener('click', function(e){
+    if (e.target.className == 'close'){
         e.target.parentElement.style.display = 'none';
         e.preventDefault();
-        //stop propagation berfungsi untuk membuat event parent tidak terpanggil pada saat memanggil event child
-        e.stopPropagation();
-    });
-});
-
-const cards = document.querySelectorAll('.card');
-cards.forEach(function (card) {
-    card.addEventListener('click', function (e) {
-        alert('ok')
-    });
-});
+    }
+})
